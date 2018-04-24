@@ -9,10 +9,9 @@
 </head>
 <body>
     <div class=" container-fluid layout-align=" center center  ng-controller="MainController as main">
-        <h1>You have <span>{{main.taskList.length}}</span>
-          <span ng-show="main.taskList.length == 0">task for now, please be productive!</span>
-           <span ng-show="main.taskList.length == 1">task</span>
-           <span ng-show="main.taskList.length > 1">tasks</span>
+        <h1>You have <span ng-show="main.taskList.length == 0"> no task for now, please be productive!</span>
+           <span ng-show="main.taskList.length == 1">{{main.taskList.length}} task</span>
+           <span ng-show="main.taskList.length > 1">{{main.taskList.length}} tasks</span>
         </h1>
             <form ng-submit="main.addTask()">
                 <input type="text" ng-model="main.taskInput" required>
